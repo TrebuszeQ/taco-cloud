@@ -11,7 +11,8 @@ public class Ingredient {
         this.name = name;
         this.type = type;
     }
-
+    public String getId() { return id; }
+    public String getName() { return name; }
     public Type getType() { return type; }
 
 
