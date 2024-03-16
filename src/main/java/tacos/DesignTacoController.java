@@ -1,5 +1,6 @@
 package tacos;
 
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,9 +55,13 @@ public class DesignTacoController {
         return "design";
     }
 
-//    @PostMapping
-//    public String processDesign(Design design) {
-//        log.info("Processing taco design: " + design);;
-//        return "redirect:/orders/current";
-//    }
+    @PostMapping
+    public String processDesign(@Valid Taco design, Errors errors) {
+        if (errors.hasErrors()) {
+            return "design";
+        }
+
+        log.info("Processing taco design: " + design);;
+        return "redirect:/orders/current";
+    }
 }
