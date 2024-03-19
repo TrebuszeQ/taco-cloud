@@ -1,10 +1,13 @@
 package tacos;
 
 
+import org.springframework.jdbc.core.JdbcTemplate;
+
 public class Ingredient {
     private final String id;
     private final String name;
     private final Type type;
+    private JdbcTemplate jdbc;
 
     public Ingredient(String id, String name, Type type) {
         this.id = id;
@@ -16,7 +19,15 @@ public class Ingredient {
     public Type getType() { return type; }
 
 
-    public static enum Type {
-        WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
+    public enum Type {
+        WRAP,
+        PROTEIN,
+        VEGGIES,
+        CHEESE,
+        SAUCE
     }
+
+    @Override
+    public Ingredient findOne(String id)
+
 }
