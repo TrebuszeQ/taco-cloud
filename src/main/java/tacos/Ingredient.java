@@ -1,5 +1,7 @@
 package tacos;
+import lombok.Data;
 
+@Data
 public class Ingredient {
     protected final String id;
     protected final String name;
