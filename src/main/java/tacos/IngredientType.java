@@ -3,7 +3,7 @@ package tacos;
 public enum IngredientType {
     WRAP,
     MEAT,
-    VEGGIES,
+    VEGGIE,
     CHEESE,
     SAUCE
 }
